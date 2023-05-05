@@ -66,6 +66,13 @@ class Operasi{
         }
         size++;
     }
+    public void tampil(){
+        if (isEmpty()){
+            System.out.println("data tidak ada");
+        } else if (awal.getNext() == null){
+            System.out.println(awal.getData());
+        }
+    }
 }
 public class DoublyLinkedList {
     public static void main(String[] args) {
