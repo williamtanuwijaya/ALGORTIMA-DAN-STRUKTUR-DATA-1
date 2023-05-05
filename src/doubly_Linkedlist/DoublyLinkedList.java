@@ -71,6 +71,15 @@ class Operasi{
             System.out.println("data tidak ada");
         } else if (awal.getNext() == null){
             System.out.println(awal.getData());
+        } else {
+            Node ptr = awal;
+            System.out.println(awal.getData() + "<->");
+            ptr = awal.getNext();
+            while (ptr.getNext() != null){
+                System.out.println(ptr.getData() + "<->");
+                ptr = ptr.getNext();
+            }
+            System.out.println(ptr.getData());
         }
     }
 }
