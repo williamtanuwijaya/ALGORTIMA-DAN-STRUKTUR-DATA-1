@@ -66,6 +66,39 @@ class Operasi{
         }
         size++;
     }
+    public void insert_akhir(int x){
+        Node ptr = new Node(x,null,null);
+        if (isEmpty()){
+            awal = ptr;
+            akhir = awal;
+        } else {
+            ptr.setPrev(akhir);
+            akhir.setNext(ptr);
+            akhir = ptr;
+        }
+        size++;
+    }
+    public void insert_posisi(int x, int posisi){
+        Node nptr = new Node(x,null,null);
+        if (posisi == 1){
+            this.insert_awal(x);
+        } else if (posisi == size) {
+            this.insert_akhir(x);
+        } else {
+            Node ptr = awal;
+            for (int i = 2; i <= size; i++) {
+                if (i == posisi){
+                    Node temp = ptr.getNext();
+                    ptr.setNext(nptr);
+                    nptr.setPrev(ptr);
+                    nptr.setNext(temp);
+                    temp.setPrev(nptr);
+                }
+                ptr = ptr.getNext();
+            }
+            size++;
+        }
+    }
     public void tampil(){
         if (isEmpty()){
             System.out.println("data tidak ada");
@@ -73,10 +106,10 @@ class Operasi{
             System.out.println(awal.getData());
         } else {
             Node ptr = awal;
-            System.out.println(awal.getData() + "<->");
+            System.out.print(awal.getData() + "<->");
             ptr = awal.getNext();
             while (ptr.getNext() != null){
-                System.out.println(ptr.getData() + "<->");
+                System.out.print(ptr.getData() + "<->");
                 ptr = ptr.getNext();
             }
             System.out.println(ptr.getData());
@@ -85,6 +118,15 @@ class Operasi{
 }
 public class DoublyLinkedList {
     public static void main(String[] args) {
-
+        Operasi dll = new Operasi();
+        dll.insert_awal(10);
+        dll.insert_awal(10);
+        dll.tampil();
+        dll.insert_awal(30);
+        dll.tampil();
+        dll.insert_akhir(30);
+        dll.tampil();
+        dll.insert_akhir(50);
+        dll.tampil();
     }
 }
