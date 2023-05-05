@@ -39,6 +39,34 @@ class Node{
         this.next = next;
     }
 }
+
+class Operasi{
+    Node awal, akhir;
+    int size;
+    public Operasi(){
+        awal = null;
+        akhir = null;
+        size = 0;
+    }
+    public boolean isEmpty(){
+        return awal == null;
+    }
+    public int getSize(){
+        return size;
+    }
+    public void insert_awal(int x){
+        Node ptr = new Node(x, null, null);
+        if (isEmpty()){
+            awal = ptr;
+            akhir = awal;
+        } else {
+            awal.setPrev(ptr);
+            ptr.setNext(awal);
+            awal = ptr;
+        }
+        size++;
+    }
+}
 public class DoublyLinkedList {
     public static void main(String[] args) {
 
