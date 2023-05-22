@@ -30,15 +30,26 @@ public class infix_prefik {
             } else if (c == ')'){
                 while (!s.isEmpty() && s.peek() != '('){
                     hasil += s.pop();
+                }  if (!s.isEmpty() && s.peek() != '('){
+                    return "Notasi Salah";
                 }
             } else {
                 while (!s.isEmpty() && level_operator(c) <= level_operator(s.peek())){
-                    if (){
-
+                    if (s.peek() == '('){
+                        return "Notasi Salah";
                     }
+                    hasil+=s.pop();
                 }
+                s.push(c);
             }
         }
+        while (!s.isEmpty()){
+            if (s.peek() == '('){
+                return "Notasi Salah";
+            }
+            hasil += s.pop();
+        }
+        return hasil;
     }
 
     public static void main(String[] args) {
