@@ -1,6 +1,7 @@
 package infix_prefix_postfix;
 
 import java.util.Stack;
+import java.util.logging.Level;
 
 public class infix_prefik {
     public int operator(char operator){
@@ -29,6 +30,12 @@ public class infix_prefik {
             } else if (c == ')'){
                 while (!s.isEmpty() && s.peek() != '('){
                     hasil += s.pop();
+                }
+            } else {
+                while (!s.isEmpty() && level_operator(c) <= level_operator(s.peek())){
+                    if (){
+
+                    }
                 }
             }
         }
