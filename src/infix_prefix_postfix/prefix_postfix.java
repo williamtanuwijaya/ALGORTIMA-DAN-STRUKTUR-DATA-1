@@ -2,7 +2,7 @@ package infix_prefix_postfix;
 
 import java.util.Stack;
 
-public class postfix_prefix {
+public class prefix_postfix {
     public boolean isOperator(char c) {
         switch (c) {
             case '+':
@@ -15,14 +15,14 @@ public class postfix_prefix {
         return false;
     }
 
-    public String PostfixToPrefix(String notasi) {
+    public String PrefixtoPostfix(String notasi) {
         Stack<String> s = new Stack<String>();
-        for (int i = 0; i < notasi.length(); i++) {
+        for (int i = notasi.length() - 1; i >= 0 ;i--) {
             char c = notasi.charAt(i);
             if (isOperator(c)) {
                 String s1 = s.pop();
                 String s2 = s.pop();
-                String temp = c + s2 + s1;
+                String temp = s1 + s2 + c;
                 s.push(temp);
             } else {
                 s.push(c + "");
@@ -32,9 +32,10 @@ public class postfix_prefix {
         return hasil;
     }
 
+
     public static void main(String[] args) {
-        postfix_prefix s = new postfix_prefix();
-        String notasi = "ABCD^E-*+";
-        System.out.println(s.PostfixToPrefix(notasi));
+        prefix_postfix s = new prefix_postfix();
+        String notasi = "+A*B-^CDE";
+        System.out.println(s.PrefixtoPostfix(notasi));
     }
 }
