@@ -1,12 +1,12 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class AntrianRumahSakit {
+public class LatihanQueue_WilliamTanuwijaya {
     private Queue<String> antrianPasienUmum;
     private Queue<String> antrianPasienBPJS;
     private Queue<String> antrianPasienAsuransi;
 
-    public AntrianRumahSakit() {
+    public LatihanQueue_WilliamTanuwijaya() {
         antrianPasienUmum = new LinkedList<>();
         antrianPasienBPJS = new LinkedList<>();
         antrianPasienAsuransi = new LinkedList<>();
@@ -46,7 +46,7 @@ public class AntrianRumahSakit {
     }
 
     public static void main(String[] args) {
-        AntrianRumahSakit antrianRumahSakit = new AntrianRumahSakit();
+        LatihanQueue_WilliamTanuwijaya antrianRumahSakit = new LatihanQueue_WilliamTanuwijaya();
 
         antrianRumahSakit.tambahAntrianPasienUmum("A001");
         antrianRumahSakit.tambahAntrianPasienUmum("A002");
