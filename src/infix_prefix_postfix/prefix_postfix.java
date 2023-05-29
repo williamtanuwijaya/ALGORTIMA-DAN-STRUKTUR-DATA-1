@@ -31,8 +31,6 @@ public class prefix_postfix {
         String hasil = s.pop();
         return hasil;
     }
-
-
     public static void main(String[] args) {
         prefix_postfix s = new prefix_postfix();
         String notasi = "+A*B-^CDE";
