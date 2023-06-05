@@ -15,5 +15,8 @@ public class Collection_HashMap {
         System.out.println("data setelah di remove " + hm);
         System.out.println(hm.containsKey(25));
         System.out.println(hm.containsValue("Informatika"));
+
+        hm.replace(25, "IF");
+        System.out.println(hm);
     }
 }
